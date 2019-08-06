@@ -113,8 +113,8 @@ def player_stats(name)
     
 end  
 def big_shoe_rebounds
-  player1 = game_hash[:home][:players].max{|n| n[:shoe]}
-  player2 = game_hash[:away][:players].max{|n| n[:shoe]}
+  player1 = game_hash[:home][:players].max_by{|n| n[:shoe]}
+  player2 = game_hash[:away][:players].max_by{|n| n[:shoe]}
   
   if player1[:shoe] > player2[:shoe]
     return player1[:rebounds]
